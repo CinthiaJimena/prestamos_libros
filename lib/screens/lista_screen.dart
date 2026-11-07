@@ -20,11 +20,13 @@ class ListaScreen extends StatelessWidget {
         content: const Text('¿Seguro que deseas eliminarlo?'),
         actions: [
           TextButton(
-              onPressed: () => Navigator.pop(context, false),
-              child: const Text('Cancelar')),
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancelar'),
+          ),
           FilledButton(
-              onPressed: () => Navigator.pop(context, true),
-              child: const Text('Eliminar')),
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Eliminar'),
+          ),
         ],
       ),
     );
@@ -65,8 +67,7 @@ class ListaScreen extends StatelessWidget {
                   title: Text(
                     d['libro'] ?? '',
                     style: TextStyle(
-                      decoration:
-                          devuelto ? TextDecoration.lineThrough : null,
+                      decoration: devuelto ? TextDecoration.lineThrough : null,
                     ),
                   ),
                   subtitle: Text(

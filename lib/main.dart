@@ -26,10 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Préstamos de Libros',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorSchemeSeed: Colors.indigo,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
       home: const HomeScreen(),
     );
   }

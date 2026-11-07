@@ -17,7 +17,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
   final _telefono = TextEditingController();
   final _fPrestamo = TextEditingController();
   final _fDevolucion = TextEditingController();
-  final _service = PrestamosService();
+  late final _service = PrestamosService();
 
   DateTime? _prestamo;
   DateTime? _devolucion;
@@ -26,7 +26,12 @@ class _RegistroScreenState extends State<RegistroScreen> {
   @override
   void dispose() {
     for (final c in [
-      _libro, _autor, _prestatario, _telefono, _fPrestamo, _fDevolucion
+      _libro,
+      _autor,
+      _prestatario,
+      _telefono,
+      _fPrestamo,
+      _fDevolucion,
     ]) {
       c.dispose();
     }
@@ -78,9 +83,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
       Navigator.pop(context);
     } catch (e) {
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error al guardar: $e')),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Error al guardar: $e')));
     } finally {
       if (mounted) setState(() => _guardando = false);
     }

@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PrestamosService {
-  final CollectionReference<Map<String, dynamic>> _col =
-      FirebaseFirestore.instance.collection('prestamos');
+  final CollectionReference<Map<String, dynamic>> _col = FirebaseFirestore
+      .instance
+      .collection('prestamos');
 
   Future<void> agregar({
     required String libro,
